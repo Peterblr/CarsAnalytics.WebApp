@@ -1,0 +1,15 @@
+<Solution>
+  <Project Path="WebApp.Domain/WebApp.Domain.csproj" />
+  <Project Path="WebApp.Manager/WebApp.Manager.csproj">
+    <BuildDependency Project="WebApp.Domain/WebApp.Domain.csproj" />
+    <BuildDependency Project="WebApp.Services/WebApp.Services.csproj" />
+  </Project>
+  <Project Path="WebApp.Services/WebApp.Services.csproj">
+    <BuildDependency Project="WebApp.Domain/WebApp.Domain.csproj" />
+  </Project>
+  <Project Path="WebApp.Tests/WebApp.Tests.csproj">
+    <BuildDependency Project="WebApp.Domain/WebApp.Domain.csproj" />
+    <BuildDependency Project="WebApp.Manager/WebApp.Manager.csproj" />
+    <BuildDependency Project="WebApp.Services/WebApp.Services.csproj" />
+  </Project>
+</Solution>

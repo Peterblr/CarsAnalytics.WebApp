@@ -1,0 +1,29 @@
+﻿@page "/territories"
+
+<MudStack Spacing="3">
+    <MudText Typo="Typo.h5">US Territories</MudText>
+
+    @if (Loading)
+    {
+        <MudSkeleton Width="100%" Height="32px" Style="background-color: grey;" />
+        <MudSkeleton Width="100%" Height="32px" Style="background-color: grey;" />
+        <MudSkeleton Width="100%" Height="32px" Style="background-color: grey;" />
+    }
+    else
+    {
+        <MudTable Items="TerritoriesModel" Dense="true" Hover="true">
+            <HeaderContent>
+                <MudTh>Code</MudTh>
+                <MudTh>Name</MudTh>
+                <MudTh>Region</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd>@context.Code</MudTd>
+                <MudTd>@context.Name</MudTd>
+                <MudTd>@context.RegionCode</MudTd>
+            </RowTemplate>
+        </MudTable>
+    }
+
+    <TerritoryMap/>
+</MudStack>
