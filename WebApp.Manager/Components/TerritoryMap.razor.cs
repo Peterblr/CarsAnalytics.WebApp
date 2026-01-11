@@ -1,30 +1,33 @@
-﻿using Fluxor;
-using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-using WebApp.Manager.Store.Territory;
+﻿using Microsoft.AspNetCore.Components;
+using WebApp.Domain.Models;
 
-namespace WebApp.Manager.Components.Features.Territory;
+namespace WebApp.Manager.Components;
 
 public partial class TerritoryMap : ComponentBase
 {
-    [Inject] private IJSRuntime JS { get; set; } = default!;
-    [Inject] private IDispatcher Dispatcher { get; set; } = default!;
+    [Parameter] public IEnumerable<TerritoryDto> Territories { get; set; } = Enumerable.Empty<TerritoryDto>();
+    [Parameter] public EventCallback<string> OnStateClick { get; set; }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected string? SelectedCode { get; set; }
+
+    protected void OnClick(string id)
     {
-        //if (firstRender)
-        //{
-        //    await JS.InvokeVoidAsync("territoryMap.init", "/assets/us-states.geojson", DotNetObjectReference.Create(this));
-        //}
-        if (firstRender)
-        {
-            await JS.InvokeVoidAsync("initMap");
-        }
+        SelectedCode = id;
+        OnStateClick.InvokeAsync(id);
     }
 
-    [JSInvokable("OnTerritorySelected")]
-    public void OnTerritorySelected(string code)
+    protected string GetFill(string code)
     {
-        Dispatcher.Dispatch(new SelectTerritoryAction(code));
+        var t = Territories.FirstOrDefault(x => x.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
+        if (t is null) return "#f9f9f9"; 
+
+        return t.RegionCode.ToLowerInvariant() switch
+        {
+            "west" => "#6cc070",
+            "south" => "#f7c24f",
+            "midwest" => "#4f8ef7",
+            "northeast" => "#b36cf0",
+            _ => "#f9f9f9"
+        };
     }
 }
