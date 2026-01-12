@@ -1,5 +1,6 @@
 using Fluxor;
 using Fluxor.Blazor.Web.ReduxDevTools;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
@@ -20,12 +21,17 @@ builder.Services.AddScoped(sp =>
     return new HttpClient { BaseAddress = new Uri(baseUrl) };
 });
 
+builder.Services.AddHttpClient("AssetsClient", (sp, client) =>
+{
+    var navigationManager = sp.GetRequiredService<NavigationManager>(); 
+    client.BaseAddress = new Uri(navigationManager.BaseUri);
+});
 builder.Services.AddMudServices();
 
-builder.Services.AddFluxor(o => 
+builder.Services.AddFluxor(o =>
 {
     o.ScanAssemblies(typeof(Program).Assembly);
-    o.UseReduxDevTools(); 
+    o.UseReduxDevTools();
 });
 
 builder.Services.AddScoped<ITerritoryService, TerritoryService>();
