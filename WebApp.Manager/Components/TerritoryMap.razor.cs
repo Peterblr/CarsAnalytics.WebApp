@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Text.Json;
+﻿using Fluxor;
+using Microsoft.AspNetCore.Components;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using WebApp.Domain.Models;
-using static System.Net.WebRequestMethods;
+using WebApp.Manager.Store.Territory;
 
 namespace WebApp.Manager.Components;
 
@@ -14,9 +12,13 @@ public partial class TerritoryMap : ComponentBase
     [Parameter] public IEnumerable<TerritoryDto> Territories { get; set; } = Enumerable.Empty<TerritoryDto>();
     [Parameter] public EventCallback<string> OnStateClick { get; set; }
     [Inject] private IHttpClientFactory HttpClientFactory { get; set; } = default!;
+    [Inject] private IState<TerritoryState> State { get; set; } = default!;
+
     protected string? SelectedCode { get; set; }
     protected List<StateShapeDto> States { get; set; } = new();
+    protected bool Loading => State.Value.Loading;
 
+    protected StateShapeDto? SelectedState => States.FirstOrDefault(s => s.Code == SelectedCode);
     protected override async Task OnInitializedAsync()
     {
         var http = HttpClientFactory.CreateClient("AssetsClient");
@@ -24,7 +26,7 @@ public partial class TerritoryMap : ComponentBase
 
         var xml = XDocument.Parse(svg);
 
-        States = xml.Descendants()
+        States = [.. xml.Descendants()
             .Where(x => x.Name.LocalName == "path")
             .Select(x =>
             {
@@ -42,9 +44,7 @@ public partial class TerritoryMap : ComponentBase
                     X = cx,
                     Y = cy
                 };
-            })
-            .ToList();
-
+            })];
     }
 
     protected void OnClick(string id)
@@ -88,14 +88,5 @@ public partial class TerritoryMap : ComponentBase
         var centerY = (minY + maxY) / 2;
 
         return (centerX.ToString("F0"), centerY.ToString("F0"));
-    }
-
-    public class StateShapeDto
-    {
-        public string Code { get; set; } = string.Empty;
-        public string Path { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
-        public string? X { get; set; }
-        public string? Y { get; set; }
     }
 }

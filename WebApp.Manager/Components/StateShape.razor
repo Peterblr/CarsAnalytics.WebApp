@@ -1,0 +1,7 @@
+﻿<path id="@State.Code"
+      d="@State.Path"
+      class="state @(IsSelected ? "selected" : "")"
+      style="fill:@FillColor"
+      @onclick="() => OnClick.InvokeAsync(State.Code)" />
+
+<text x="@State.X" y="@State.Y" fill="black" font-size="10">@State.Code</text>
