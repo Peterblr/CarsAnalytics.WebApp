@@ -20,6 +20,11 @@ public partial class Territories : ComponentBase
         await base.OnInitializedAsync();
     }
 
+    private void HandleStateClick(string code)
+    {
+        Console.WriteLine($"Clicked state: {code}");
+    }
+
     private void OnStateChanged(object? sender, EventArgs e)
     {
         InvokeAsync(StateHasChanged);

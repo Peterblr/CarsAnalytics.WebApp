@@ -1,3 +1,24 @@
-﻿<MudPaper Class="pa-4">
-    <MudText Typo="Typo.h6">Map should be here</MudText>
-</MudPaper>
+﻿@if (Loading)
+{
+    <MudSkeleton Width="100%" Height="589px" Style="background-color: grey;" />
+}
+else
+{
+    @if (SelectedState is not null)
+    {
+        <MudText Typo="Typo.subtitle1" Color="Color.Primary">
+            Selected State is: @SelectedState.Name (@SelectedState.Code)
+        </MudText>
+    }
+    <MudPaper Style="background-color: slategray;">
+    <svg viewBox="0 0 1000 589" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        @foreach (var state in States)
+            {
+                <StateShape State="state"
+                            IsSelected="(SelectedCode == state.Code)"
+                            FillColor="@GetFill(state.Code)"
+                            OnClick="OnClick" />
+            }
+        </svg>
+    </MudPaper>
+}
