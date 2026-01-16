@@ -1,29 +1,31 @@
-﻿window.territoryMap = {
-    init: async function (geoUrl, dotnetRef) {
-        const map = L.map('map').setView([37.8, -96], 4);
+﻿console.log("inline script loaded");
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
+window.addStateLabels = function (svgSelector) {
+    console.log("addStateLabels called with selector:", svgSelector);
 
-        const res = await fetch(geoUrl);
-        const geojson = await res.json();
+    const svg = document.querySelector(svgSelector);
+    console.log("SVG found:", svg);
 
-        function onEachFeature(feature, layer) {
-            const props = feature.properties || {};
-            const name = props.NAME || 'Unknown';
-            const code = props.STATE || null; 
+    if (!svg) return;
 
-            layer.bindPopup(name);
-            layer.on('click', () => {
-                if (code) dotnetRef.invokeMethodAsync('OnTerritorySelected', code);
-            });
-        }
+    const paths = svg.querySelectorAll("path[id], path[data-id]");
+    console.log("Paths found:", paths.length);
 
-        L.geoJSON(geojson, {
-            style: { color: '#1976d2', weight: 1, fillOpacity: 0.2 },
-            onEachFeature
-        }).addTo(map);
-    }
+    paths.forEach(path => {
+        const bbox = path.getBBox();
+        const x = bbox.x + bbox.width / 2;
+        const y = bbox.y + bbox.height / 2;
+
+        const code = path.getAttribute("data-id") || path.getAttribute("id");
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", x);
+        text.setAttribute("y", y);
+        text.setAttribute("text-anchor", "middle");
+        text.setAttribute("alignment-baseline", "middle");
+        text.setAttribute("font-size", "12");
+        text.setAttribute("fill", "red");
+        text.textContent = code;
+
+        svg.appendChild(text);
+    });
 };
