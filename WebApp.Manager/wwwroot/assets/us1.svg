@@ -359,17 +359,6 @@
 		  dominant-baseline="middle">CT</text>
 	<path
 	   inkscape:connector-curvature="0"
-	   id="NH"
-	   data-name="New Hampshire"
-	   data-id="NH"
-	   d="m 923.8927,75.982738 -1.26182,1.55301 -1.45594,-0.29119 -0.77651,6.406166 0,0.09706 2.32952,8.735681 -0.19413,1.747136 -4.17372,5.532598 1.0677,5.047281 0,6.30911 -0.77651,5.82378 4.36784,15.91836 0,0 0,0 3.97959,-1.26182 12.22996,-4.07666 5.53259,-6.01791 0,0 0,-1.55301 0.29119,-2.52364 -0.67944,0.29119 -0.0971,-0.58238 -6.11498,-7.47386 -0.19413,-0.67944 -14.07415,-33.001465 0,0 z"
-	   style="stroke-width:0.97063118000000004;fill:#f9f9f9" />
-	<text x="925" y="110"
-		  font-size="10" fill="black"
-		  text-anchor="middle"
-		  dominant-baseline="middle">NH</text>
-	<path
-	   inkscape:connector-curvature="0"
 	   id="RI"
 	   data-name="Rhode Island"
 	   data-id="RI"
@@ -379,17 +368,6 @@
 		  font-size="12" fill="black"
 		  text-anchor="middle"
 		  dominant-baseline="middle">------- RI</text>
-	<path
-	   inkscape:connector-curvature="0"
-	   id="VT"
-	   data-name="Vermont"
-	   data-id="VT"
-	   d="m 923.01913,132.86173 -4.36784,-15.91836 0.77651,-5.82378 0,-6.30911 -1.0677,-5.047278 4.17372,-5.532598 0.19413,-1.747136 -2.32952,-8.735681 -1.26182,0.485316 -5.33847,1.941262 -5.24141,2.038326 -12.03583,4.36784 -0.67944,0.194126 4.36784,10.191633 1.45595,9.60924 5.14434,8.05624 4.85316,15.91835 0.19413,-0.0971 0.7765,-0.29119 2.23245,-0.67944 1.94126,-0.67944 5.5326,-1.65007 0.67944,-0.29119 0,0 z"
-	   style="stroke-width:0.97063118000000004;fill:#f9f9f9" />
-	<text x="910" y="120"
-		  font-size="10" fill="black"
-		  text-anchor="middle"
-		  dominant-baseline="middle">VT</text>
 	<path
 	   inkscape:connector-curvature="0"
 	   id="AL"
@@ -589,6 +567,28 @@
 		  font-size="12" fill="black"
 		  text-anchor="middle"
 		  dominant-baseline="middle">NY</text>
+	<path
+	   inkscape:connector-curvature="0"
+	   id="VT"
+	   data-name="Vermont"
+	   data-id="VT"
+	   d="m 923.01913,132.86173 -4.36784,-15.91836 0.77651,-5.82378 0,-6.30911 -1.0677,-5.047278 4.17372,-5.532598 0.19413,-1.747136 -2.32952,-8.735681 -1.26182,0.485316 -5.33847,1.941262 -5.24141,2.038326 -12.03583,4.36784 -0.67944,0.194126 4.36784,10.191633 1.45595,9.60924 5.14434,8.05624 4.85316,15.91835 0.19413,-0.0971 0.7765,-0.29119 2.23245,-0.67944 1.94126,-0.67944 5.5326,-1.65007 0.67944,-0.29119 0,0 z"
+	   style="stroke-width:0.97063118000000004;fill:#f9f9f9" />
+	<text x="910" y="110"
+		  font-size="10" fill="black"
+		  text-anchor="middle"
+		  dominant-baseline="middle">VT</text>
+	<path
+	   inkscape:connector-curvature="0"
+	   id="NH"
+	   data-name="New Hampshire"
+	   data-id="NH"
+	   d="m 923.8927,75.982738 -1.26182,1.55301 -1.45594,-0.29119 -0.77651,6.406166 0,0.09706 2.32952,8.735681 -0.19413,1.747136 -4.17372,5.532598 1.0677,5.047281 0,6.30911 -0.77651,5.82378 4.36784,15.91836 0,0 0,0 3.97959,-1.26182 12.22996,-4.07666 5.53259,-6.01791 0,0 0,-1.55301 0.29119,-2.52364 -0.67944,0.29119 -0.0971,-0.58238 -6.11498,-7.47386 -0.19413,-0.67944 -14.07415,-33.001465 0,0 z"
+	   style="stroke-width:0.97063118000000004;fill:#f9f9f9" />
+	<text x="930" y="120"
+		  font-size="10" fill="black"
+		  text-anchor="middle"
+		  dominant-baseline="middle">NH</text>
 	<path
 	   inkscape:connector-curvature="0"
 	   id="PA"
