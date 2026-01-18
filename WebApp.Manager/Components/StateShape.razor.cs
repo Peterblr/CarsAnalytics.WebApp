@@ -9,4 +9,7 @@ public partial class StateShape : ComponentBase
     [Parameter] public bool IsSelected { get; set; }
     [Parameter] public string FillColor { get; set; } = "#f9f9f9";
     [Parameter] public EventCallback<string> OnClick { get; set; }
+
+    protected bool IsHovered { get; set; }
+    protected string CurrentFill => IsHovered ? "lightblue" : FillColor;
 }
