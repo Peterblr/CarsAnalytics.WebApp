@@ -1,7 +1,21 @@
 ﻿<path id="@State.Code"
       d="@State.Path"
       class="state @(IsSelected ? "selected" : "")"
-      style="fill:@FillColor"
-      @onclick="() => OnClick.InvokeAsync(State.Code)" />
+      style="fill:@CurrentFill"
+      @onclick="() => OnClick.InvokeAsync(State.Code)"
+      @onmouseover="() => IsHovered = true"
+      @onmouseout="() => IsHovered = false" />
 
-<text x="@State.X" y="@State.Y" fill="black" font-size="10">@State.Code</text>
+<text x="@State.TextX"
+      y="@State.TextY"
+      font-size="@(IsSelected ? "16" : State.FontSize)"
+      font-weight="@(IsSelected ? "bold" : "normal")"
+      fill="black"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      @onclick="() => OnClick.InvokeAsync(State.Code)"
+      @onmouseover="() => IsHovered = true"
+      @onmouseout="() => IsHovered = false"
+      style="cursor:pointer;">
+    @State.Text
+</text>

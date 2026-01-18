@@ -9,7 +9,7 @@ public class TerritoryEffects(ITerritoryService service)
     public async Task HandleLoad(LoadTerritoriesAction action, IDispatcher dispatcher)
     {
         var items = await service.GetTerritoriesAsync(action.RegionCode);
-        await Task.Delay(2000);
+        await Task.Delay(1000);
         dispatcher.Dispatch(new LoadTerritoriesResultAction([.. items]));
     }
 }

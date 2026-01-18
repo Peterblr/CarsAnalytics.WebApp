@@ -1,6 +1,5 @@
 ﻿using Fluxor;
 using Microsoft.AspNetCore.Components;
-using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using WebApp.Domain.Models;
 using WebApp.Manager.Store.Territory;
@@ -22,7 +21,7 @@ public partial class TerritoryMap : ComponentBase
     protected override async Task OnInitializedAsync()
     {
         var http = HttpClientFactory.CreateClient("AssetsClient");
-        var svg = await http.GetStringAsync("assets/us.svg");
+        var svg = await http.GetStringAsync("assets/us1.svg");
 
         var xml = XDocument.Parse(svg);
 
@@ -34,17 +33,27 @@ public partial class TerritoryMap : ComponentBase
                 var path = (string?)x.Attribute("d") ?? "";
                 var name = (string?)x.Attribute("data-name") ?? "";
 
-                var (cx, cy) = GetPathCenter(path);
+                var textElement = xml.Descendants()
+                    .FirstOrDefault(t => t.Name.LocalName == "text" &&
+                                         ((string?)t.Value)?.Trim().EndsWith(code, StringComparison.OrdinalIgnoreCase) == true);
+
+                var textValue = textElement?.Value ?? "";
+                var textX = (string?)textElement?.Attribute("x") ?? "0";
+                var textY = (string?)textElement?.Attribute("y") ?? "0";
+                var fontSize = (string?)textElement?.Attribute("font-size") ?? "12";
 
                 return new StateShapeDto
                 {
                     Code = code,
                     Path = path,
                     Name = name,
-                    X = cx,
-                    Y = cy
+                    Text = textValue,
+                    TextX = textX,
+                    TextY = textY,
+                    FontSize = fontSize
                 };
-            })];
+            }
+        )];
     }
 
     protected void OnClick(string id)
@@ -66,27 +75,5 @@ public partial class TerritoryMap : ComponentBase
             "northeast" => "#b36cf0",
             _ => "#f9f9f9"
         };
-    }
-
-    private (string X, string Y) GetPathCenter(string d)
-    {
-        var matches = Regex.Matches(d, @"-?\d+(\.\d+)?");
-
-        var numbers = matches.Select(m => double.Parse(m.Value, System.Globalization.CultureInfo.InvariantCulture)).ToList();
-
-        if (numbers.Count < 2) return ("0", "0");
-
-        var xs = numbers.Where((n, i) => i % 2 == 0).ToList();
-        var ys = numbers.Where((n, i) => i % 2 == 1).ToList();
-
-        var minX = xs.Min();
-        var maxX = xs.Max();
-        var minY = ys.Min();
-        var maxY = ys.Max();
-
-        var centerX = (minX + maxX) / 2;
-        var centerY = (minY + maxY) / 2;
-
-        return (centerX.ToString("F0"), centerY.ToString("F0"));
     }
 }
