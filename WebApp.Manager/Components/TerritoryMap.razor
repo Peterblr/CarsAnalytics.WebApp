@@ -4,21 +4,23 @@
 }
 else
 {
-    @if (SelectedState is not null)
-    {
-        <MudText Typo="Typo.subtitle1" Color="Color.Primary">
-            Selected State is: @SelectedState.Name (@SelectedState.Code)
-        </MudText>
-    }
-    <MudPaper Style="background-color: slategray;">
-    <svg viewBox="0 0 1000 589" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-        @foreach (var state in States)
-            {
-                <StateShape State="state"
-                            IsSelected="(SelectedCode == state.Code)"
-                            FillColor="@GetFill(state.Code)"
-                            OnClick="OnClick" />
-            }
-        </svg>
-    </MudPaper>
+    <MudGrid>
+        <MudItem xs="@(SelectedState is not null ? 9 : 12)">
+            <MudPaper Class="d-flex align-center justify-center mud-width-full py-8" Style="background-color: slategray;">
+                <svg viewBox="0 0 1000 589" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                    @foreach (var state in States)
+                    {
+                        <StateShape State="state"
+                                    IsSelected="(SelectedCode == state.Code)"
+                                    FillColor="@GetFill(state.Code)"
+                                    OnClick="OnClick" />
+                    }
+                </svg>
+            </MudPaper>
+        </MudItem>
+        @if (SelectedState is not null)
+        {
+            <StateCard SelectedState="SelectedState" />
+        }
+    </MudGrid>
 }
