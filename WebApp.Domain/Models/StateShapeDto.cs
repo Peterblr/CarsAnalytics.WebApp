@@ -16,13 +16,12 @@ public class StateShapeDto
 
     public string DisplayText(bool isSelected)
     {
-        if (!isSelected) return Text;
+        var s = Text;
 
-        if (Text.StartsWith(DESHPREFIX))
+        if (isSelected && s.StartsWith(DESHPREFIX))
         {
             Text = Text[2..];
-            return Text.Trim();
         }
-        return Text;
+        return s.Trim();
     }
 }
