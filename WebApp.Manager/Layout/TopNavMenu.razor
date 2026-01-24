@@ -1,0 +1,26 @@
+﻿@using MudBlazor
+
+<MudAppBar Color="Color.Primary" Elevation="4" Fixed="true">
+    <MudText Typo="Typo.h6">WebApp.Manager</MudText>
+    <MudSpacer />
+    <MudStack Spacing="6" Row="true">
+        <MudLink Color="Color.Inherit" Class="grow-on-hover" Underline="Underline.None" Href="">
+            <MudIcon Icon="@Icons.Material.Filled.Home" />
+            Home
+        </MudLink>
+        <MudLink Color="Color.Inherit" Class="grow-on-hover" Underline="Underline.None" Href="counter">
+            <MudIcon Icon="@Icons.Material.Filled.AddBox" />
+            Counter
+        </MudLink>
+        <MudLink Color="Color.Inherit" Class="grow-on-hover" Underline="Underline.None" Href="weather">
+            <MudIcon Icon="@Icons.Material.Filled.List" />
+            Weather
+        </MudLink>
+        <MudLink Color="Color.Inherit" Class="grow-on-hover" Underline="Underline.None" Href="territories">
+            <MudIcon Icon="@Icons.Material.Filled.Public" />
+            Territories
+        </MudLink>
+    </MudStack>
+    <MudSpacer />
+    <MudAvatar Color="Color.Warning" Variant="Variant.Outlined">US</MudAvatar>
+</MudAppBar>

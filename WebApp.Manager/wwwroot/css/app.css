@@ -131,3 +131,14 @@ code {
         fill: #4f8ef7 !important;
         stroke: #2c5fb3;
     }
+
+.grow-on-hover {
+    transition: transform 0.2s ease-in-out;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+    .grow-on-hover:hover {
+        transform: scale(1.05);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
