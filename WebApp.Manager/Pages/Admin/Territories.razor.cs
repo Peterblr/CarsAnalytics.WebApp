@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using WebApp.Manager.Store.Territory;
 using WebApp.Domain.Models;
 
-namespace WebApp.Manager.Pages;
+namespace WebApp.Manager.Pages.Admin;
 
 public partial class Territories : ComponentBase
 {

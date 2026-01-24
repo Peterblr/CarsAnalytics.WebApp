@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace WebApp.Domain.Models;
+﻿namespace WebApp.Domain.Models;
 
 public class StateShapeDto
 {
