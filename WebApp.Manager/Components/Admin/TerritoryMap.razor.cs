@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using WebApp.Domain.Models;
 using WebApp.Manager.Store.Territory;
 
-namespace WebApp.Manager.Components;
+namespace WebApp.Manager.Components.Admin;
 
 public partial class TerritoryMap : ComponentBase
 {

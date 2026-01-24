@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using WebApp.Domain.Models;
 
-namespace WebApp.Manager.Components;
+namespace WebApp.Manager.Components.Admin;
 
 public partial class StateCard : ComponentBase
 {
