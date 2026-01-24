@@ -1,8 +1,12 @@
 ﻿<MudItem xs="3">
-    <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
-        <MudText Typo="Typo.subtitle1" Color="Color.Primary">
-            Selected State is: @SelectedState.Name (@SelectedState.Code)
-        </MudText>
-        <MudImage ObjectFit="ObjectFit.Cover" Height="200" Width="400" Src="assets/cars/Audi A6.jpg" Alt="image" Elevation="25" Class="rounded-lg" />
-    </MudPaper>
+    <MudCard>
+        <MudCardMedia Image="assets/cars/Audi A6.jpg" Height="200" Class="rounded-lg" />
+        <MudCardContent>
+            <MudText Typo="Typo.h5">Selected State is: @SelectedState.Name (@SelectedState.Code)</MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Share</MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn more</MudButton>
+        </MudCardActions>
+    </MudCard>
 </MudItem>
