@@ -1,102 +1,91 @@
-﻿CarsAnalytics.ExperienceApi
-├── Controllers
-│   ├── TerritoriesController.cs                     ✔ DONE
-│   ├── ReviewsController.cs                         ❗ TODO
-│   ├── RatingsController.cs                         ❗ TODO
-│   ├── FavoritesController.cs                       ❗ TODO
-│   ├── ComparisonsController.cs                     ❗ TODO
-│   ├── UserExperienceController.cs                  ❗ TODO
-│   └── CommentsController.cs                        ❗ TODO
+﻿CarsAnalytics.WebApp
+├── WebApp.Manager
 │
-├── Data
-│   ├── ITerritoriesProvider.cs                      ✔ DONE
-│   ├── TerritoriesProvider.cs                       ✔ DONE
-│   ├── IReviewProvider.cs                           ❗ TODO
-│   ├── ReviewProvider.cs                            ❗ TODO
-│   ├── IRatingProvider.cs                           ❗ TODO
-│   ├── RatingProvider.cs                            ❗ TODO
-│   ├── IFavoriteProvider.cs                         ❗ TODO
-│   ├── FavoriteProvider.cs                          ❗ TODO
-│   ├── IComparisonProvider.cs                       ❗ TODO
-│   ├── ComparisonProvider.cs                        ❗ TODO
-│   ├── IUserExperienceProvider.cs                   ❗ TODO
-│   ├── UserExperienceProvider.cs                    ❗ TODO
-│   ├── ICommentProvider.cs                          ❗ TODO
-│   └── CommentProvider.cs                           ❗ TODO
+│   Pages
+│   ├── Territory
+│   │   ├── TerritoryList.razor                     ❗ TODO
+│   │   ├── TerritoryDetails.razor                  ❗ TODO
+│   │   ├── TerritoryCreate.razor                   ❗ TODO
+│   │   └── TerritoryEdit.razor                     ❗ TODO
+│   │
+│   ├── Reviews
+│   │   ├── ReviewsList.razor                       ❗ TODO
+│   │   ├── ReviewDetails.razor                     ❗ TODO
+│   │   ├── ReviewCreate.razor                      ❗ TODO
+│   │   └── ReviewEdit.razor                        ❗ TODO
+│   │
+│   ├── Ratings                                     ❗ TODO (Pages)
+│   ├── Favorites                                   ❗ TODO (Pages)
+│   ├── Comparisons                                 ❗ TODO (Pages)
+│   ├── UserExperience                              ❗ TODO (Pages)
+│   └── Comments                                    ❗ TODO (Pages)
 │
-├── Domain
-│   ├── Review.cs                                    ❗ TODO
-│   ├── Rating.cs                                    ❗ TODO
-│   ├── Favorite.cs                                  ❗ TODO
-│   ├── Comparison.cs                                ❗ TODO
-│   ├── UserExperience.cs                            ❗ TODO
-│   └── Comment.cs                                   ❗ TODO
+│   Components
+│   ├── Territory
+│   │   ├── TerritoryCard.razor                     ❗ TODO
+│   │   └── TerritoryTable.razor                    ❗ TODO
+│   │
+│   ├── Reviews                                     ❗ TODO (Components)
+│   ├── Ratings                                     ❗ TODO (Components)
+│   ├── Favorites                                   ❗ TODO (Components)
+│   ├── Comparisons                                 ❗ TODO (Components)
+│   ├── UserExperience                              ❗ TODO (Components)
+│   └── Comments                                    ❗ TODO (Components)
 │
-├── Dto
-│   ├── TerritoryDto.cs                              ✔ DONE
-│   ├── ReviewDto.cs                                 ❗ TODO
-│   ├── ReviewCreateDto.cs                           ❗ TODO
-│   ├── ReviewUpdateDto.cs                           ❗ TODO
-│   ├── RatingDto.cs                                 ❗ TODO
-│   ├── FavoriteDto.cs                               ❗ TODO
-│   ├── ComparisonDto.cs                             ❗ TODO
-│   ├── ComparisonCreateDto.cs                       ❗ TODO
-│   ├── UserExperienceDto.cs                         ❗ TODO
-│   ├── CommentDto.cs                                ❗ TODO
-│   └── PaginationRequestDto.cs                      ❗ TODO
+│   Store (Fluxor)
+│   ├── Territory
+│   │   ├── Actions                                 ❗ TODO
+│   │   ├── Reducers                                ❗ TODO
+│   │   ├── Effects                                 ❗ TODO
+│   │   └── State                                   ❗ TODO
+│   │
+│   ├── Reviews                                     ❗ TODO (Fluxor)
+│   ├── Ratings                                     ❗ TODO (Fluxor)
+│   ├── Favorites                                   ❗ TODO (Fluxor)
+│   ├── Comparisons                                 ❗ TODO (Fluxor)
+│   ├── UserExperience                              ❗ TODO (Fluxor)
+│   └── Comments                                    ❗ TODO (Fluxor)
 │
-├── Services
-│   ├── ITerritoryService.cs                         ✔ DONE
-│   ├── TerritoryService.cs                          ✔ DONE
-│   ├── IReviewService.cs                            ❗ TODO
-│   ├── ReviewService.cs                             ❗ TODO
-│   ├── IRatingService.cs                            ❗ TODO
-│   ├── RatingService.cs                             ❗ TODO
-│   ├── IFavoriteService.cs                          ❗ TODO
-│   ├── FavoriteService.cs                           ❗ TODO
-│   ├── IComparisonService.cs                        ❗ TODO
-│   ├── ComparisonService.cs                         ❗ TODO
-│   ├── IUserExperienceService.cs                    ❗ TODO
-│   ├── UserExperienceService.cs                     ❗ TODO
-│   ├── ICommentService.cs                           ❗ TODO
-│   ├── CommentService.cs                            ❗ TODO
-│   └── (AccessControl / Pagination helpers)         ❗ TODO
+│   Layout
+│   ├── MainLayout.razor                            ❗ TODO
+│   ├── AdminLayout.razor                           ❗ TODO
+│   └── NavMenu.razor                               ❗ TODO
 │
-├── Validators
-│   ├── TerritoryDtoValidator.cs                     ✔ DONE
-│   ├── ReviewValidator.cs                           ❗ TODO
-│   ├── RatingValidator.cs                           ❗ TODO
-│   ├── FavoriteValidator.cs                         ❗ TODO
-│   ├── ComparisonValidator.cs                       ❗ TODO
-│   ├── UserExperienceValidator.cs                   ❗ TODO
-│   └── CommentValidator.cs                          ❗ TODO
-
-CarsAnalytics.ExperienceApi.Tests
-├── CarsAnalytics.ExperienceApi.Tests.csproj
+│   wwwroot
+│   ├── assets                                      ❗ TODO (images, icons)
+│   └── css / js                                    ❗ TODO (styling)
 │
-├── ControllerTests
-│   ├── TerritoriesControllerTests.cs                ❗ TODO
-│   ├── ReviewsControllerTests.cs                    ❗ TODO
-│   ├── RatingsControllerTests.cs                    ❗ TODO
-│   ├── FavoritesControllerTests.cs                  ❗ TODO
-│   ├── ComparisonsControllerTests.cs                ❗ TODO
-│   ├── UserExperienceControllerTests.cs             ❗ TODO
-│   └── CommentsControllerTests.cs                   ❗ TODO
 │
-├── ServiceTests
-│   ├── TerritoryServiceTests.cs                     ❗ TODO
-│   ├── ReviewServiceTests.cs                        ❗ TODO
-│   ├── RatingServiceTests.cs                        ❗ TODO
-│   ├── FavoriteServiceTests.cs                      ❗ TODO
-│   ├── ComparisonServiceTests.cs                    ❗ TODO
-│   ├── UserExperienceServiceTests.cs                ❗ TODO
-│   └── CommentServiceTests.cs                       ❗ TODO
+├── WebApp.Services
+│   ├── TerritoryApiClient.cs                       ❗ TODO
+│   ├── ReviewsApiClient.cs                         ❗ TODO
+│   ├── RatingsApiClient.cs                         ❗ TODO
+│   ├── FavoritesApiClient.cs                       ❗ TODO
+│   ├── ComparisonsApiClient.cs                     ❗ TODO
+│   ├── UserExperienceApiClient.cs                  ❗ TODO
+│   └── CommentsApiClient.cs                        ❗ TODO
 │
-└── ValidatorTests
-    ├── TerritoryDtoValidatorTests.cs                ❗ TODO
-    ├── ReviewValidatorTests.cs                      ❗ TODO
-    ├── RatingValidatorTests.cs                      ❗ TODO
-    ├── FavoriteValidatorTests.cs                    ❗ TODO
-    ├── ComparisonValidatorTests.cs                  ❗ TODO
-    ├── UserExperienceValidatorTests.cs              ❗ TODO
-    └── CommentValidatorTests.cs                     ❗ TODO
+│   └── (DTO mappers, error handling)               ❗ TODO
+│
+├── WebApp.Domain
+│   ├── TerritoryModel.cs                           ✔ DONE / ❗ TODO (уточнить)
+│   ├── ReviewModel.cs                              ❗ TODO
+│   ├── RatingModel.cs                              ❗ TODO
+│   ├── FavoriteModel.cs                            ❗ TODO
+│   ├── ComparisonModel.cs                          ❗ TODO
+│   ├── UserExperienceModel.cs                      ❗ TODO
+│   └── CommentModel.cs                             ❗ TODO
+│
+├── WebApp.Tests
+│   ├── PageTests
+│   │   ├── TerritoryPagesTests.cs                  ❗ TODO
+│   │   ├── ReviewsPagesTests.cs                    ❗ TODO
+│   │   ├── RatingsPagesTests.cs                    ❗ TODO
+│   │   ├── FavoritesPagesTests.cs                  ❗ TODO
+│   │   ├── ComparisonsPagesTests.cs                ❗ TODO
+│   │   ├── UserExperiencePagesTests.cs             ❗ TODO
+│   │   └── CommentsPagesTests.cs                   ❗ TODO
+│
+│   ├── ComponentTests                              ❗ TODO
+│   ├── StoreTests (Fluxor)                         ❗ TODO
+│   └── ServicesTests                               ❗ TODO
