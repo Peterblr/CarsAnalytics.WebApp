@@ -1,0 +1,17 @@
+﻿@page "/most-popular-cars"
+
+<MudStack Spacing="3">
+    <MudText Typo="Typo.h5">US Territories</MudText>
+
+    @if (Loading)
+    {
+        <MudSkeleton Width="100%" Height="32px" Style="background-color: grey;" />
+        <MudSkeleton Width="100%" Height="32px" Style="background-color: grey;" />
+        <MudSkeleton Width="100%" Height="32px" Style="background-color: grey;" />
+    }
+    else
+    {
+        <Map Territories="TerritoriesModel" OnStateClick="HandleStateClick" />
+    }
+
+</MudStack>
