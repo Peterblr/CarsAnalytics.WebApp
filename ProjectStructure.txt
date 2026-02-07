@@ -1,4 +1,4 @@
-## WebApp.Manager
+﻿## WebApp.Manager
 WebApp.Manager
 ├── App.razor
 ├── Components
