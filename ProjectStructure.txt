@@ -1,0 +1,30 @@
+## CarsAnalytics.ExperienceApi
+CarsAnalytics.ExperienceApi
+├── CarsAnalytics.ExperienceApi.csproj
+├── CarsAnalytics.ExperienceApi.http
+├── Controllers
+│   └── TerritoriesController.cs
+├── Dto
+│   └── TerritoryDto.cs
+├── Program.cs
+├── Properties
+│   └── launchSettings.json
+├── Providers
+│   ├── ITerritoriesProvider.cs
+│   └── TerritoriesProvider.cs
+├── Services
+│   ├── ITerritoryService.cs
+│   └── TerritoryService.cs
+├── Validators
+│   └── TerritoryDtoValidator.cs
+├── appsettings.Development.json
+└── appsettings.json
+
+7 directories, 13 files
+
+## CarsAnalytics.ExperienceApi.Tests
+CarsAnalytics.ExperienceApi.Tests
+├── CarsAnalytics.ExperienceApi.Tests.csproj
+└── UnitTest1.cs
+
+1 directory, 2 files

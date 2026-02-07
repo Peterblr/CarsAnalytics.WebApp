@@ -1,0 +1,63 @@
+name: Update Project Structure
+
+on:
+  push:
+    branches: [ develop, master ]
+  workflow_dispatch:
+
+jobs:
+  update-tree:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install tree
+        run: sudo apt-get update && sudo apt-get install -y tree
+
+      # Generate tree for WebApp.Manager
+      - name: Generate tree for WebApp.Manager
+        run: |
+          echo "## WebApp.Manager" > ProjectStructure.txt
+          tree WebApp.Manager \
+            -a \
+            -I "bin|obj|*.user|*.cache" \
+            >> ProjectStructure.txt
+
+      # Generate tree for WebApp.Services
+      - name: Generate tree for WebApp.Services
+        run: |
+          echo "" >> ProjectStructure.txt
+          echo "## WebApp.Services" >> ProjectStructure.txt
+          tree WebApp.Services \
+            -a \
+            -I "bin|obj|*.user|*.cache" \
+            >> ProjectStructure.txt
+
+      # Generate tree for WebApp.Domain
+      - name: Generate tree for WebApp.Domain
+        run: |
+          echo "" >> ProjectStructure.txt
+          echo "## WebApp.Domain" >> ProjectStructure.txt
+          tree WebApp.Domain \
+            -a \
+            -I "bin|obj|*.user|*.cache" \
+            >> ProjectStructure.txt
+
+      # Generate tree for WebApp.Tests
+      - name: Generate tree for WebApp.Tests
+        run: |
+          echo "" >> ProjectStructure.txt
+          echo "## WebApp.Tests" >> ProjectStructure.txt
+          tree WebApp.Tests \
+            -a \
+            -I "bin|obj|*.user|*.cache" \
+            >> ProjectStructure.txt
+
+      # Commit changes to the SAME branch where workflow was triggered
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update project structure"
+          file_pattern: ProjectStructure.txt
+          branch: ${{ github.ref_name }}
