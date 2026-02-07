@@ -1,0 +1,102 @@
+﻿CarsAnalytics.ExperienceApi
+├── Controllers
+│   ├── TerritoriesController.cs                     ✔ DONE
+│   ├── ReviewsController.cs                         ❗ TODO
+│   ├── RatingsController.cs                         ❗ TODO
+│   ├── FavoritesController.cs                       ❗ TODO
+│   ├── ComparisonsController.cs                     ❗ TODO
+│   ├── UserExperienceController.cs                  ❗ TODO
+│   └── CommentsController.cs                        ❗ TODO
+│
+├── Data
+│   ├── ITerritoriesProvider.cs                      ✔ DONE
+│   ├── TerritoriesProvider.cs                       ✔ DONE
+│   ├── IReviewProvider.cs                           ❗ TODO
+│   ├── ReviewProvider.cs                            ❗ TODO
+│   ├── IRatingProvider.cs                           ❗ TODO
+│   ├── RatingProvider.cs                            ❗ TODO
+│   ├── IFavoriteProvider.cs                         ❗ TODO
+│   ├── FavoriteProvider.cs                          ❗ TODO
+│   ├── IComparisonProvider.cs                       ❗ TODO
+│   ├── ComparisonProvider.cs                        ❗ TODO
+│   ├── IUserExperienceProvider.cs                   ❗ TODO
+│   ├── UserExperienceProvider.cs                    ❗ TODO
+│   ├── ICommentProvider.cs                          ❗ TODO
+│   └── CommentProvider.cs                           ❗ TODO
+│
+├── Domain
+│   ├── Review.cs                                    ❗ TODO
+│   ├── Rating.cs                                    ❗ TODO
+│   ├── Favorite.cs                                  ❗ TODO
+│   ├── Comparison.cs                                ❗ TODO
+│   ├── UserExperience.cs                            ❗ TODO
+│   └── Comment.cs                                   ❗ TODO
+│
+├── Dto
+│   ├── TerritoryDto.cs                              ✔ DONE
+│   ├── ReviewDto.cs                                 ❗ TODO
+│   ├── ReviewCreateDto.cs                           ❗ TODO
+│   ├── ReviewUpdateDto.cs                           ❗ TODO
+│   ├── RatingDto.cs                                 ❗ TODO
+│   ├── FavoriteDto.cs                               ❗ TODO
+│   ├── ComparisonDto.cs                             ❗ TODO
+│   ├── ComparisonCreateDto.cs                       ❗ TODO
+│   ├── UserExperienceDto.cs                         ❗ TODO
+│   ├── CommentDto.cs                                ❗ TODO
+│   └── PaginationRequestDto.cs                      ❗ TODO
+│
+├── Services
+│   ├── ITerritoryService.cs                         ✔ DONE
+│   ├── TerritoryService.cs                          ✔ DONE
+│   ├── IReviewService.cs                            ❗ TODO
+│   ├── ReviewService.cs                             ❗ TODO
+│   ├── IRatingService.cs                            ❗ TODO
+│   ├── RatingService.cs                             ❗ TODO
+│   ├── IFavoriteService.cs                          ❗ TODO
+│   ├── FavoriteService.cs                           ❗ TODO
+│   ├── IComparisonService.cs                        ❗ TODO
+│   ├── ComparisonService.cs                         ❗ TODO
+│   ├── IUserExperienceService.cs                    ❗ TODO
+│   ├── UserExperienceService.cs                     ❗ TODO
+│   ├── ICommentService.cs                           ❗ TODO
+│   ├── CommentService.cs                            ❗ TODO
+│   └── (AccessControl / Pagination helpers)         ❗ TODO
+│
+├── Validators
+│   ├── TerritoryDtoValidator.cs                     ✔ DONE
+│   ├── ReviewValidator.cs                           ❗ TODO
+│   ├── RatingValidator.cs                           ❗ TODO
+│   ├── FavoriteValidator.cs                         ❗ TODO
+│   ├── ComparisonValidator.cs                       ❗ TODO
+│   ├── UserExperienceValidator.cs                   ❗ TODO
+│   └── CommentValidator.cs                          ❗ TODO
+
+CarsAnalytics.ExperienceApi.Tests
+├── CarsAnalytics.ExperienceApi.Tests.csproj
+│
+├── ControllerTests
+│   ├── TerritoriesControllerTests.cs                ❗ TODO
+│   ├── ReviewsControllerTests.cs                    ❗ TODO
+│   ├── RatingsControllerTests.cs                    ❗ TODO
+│   ├── FavoritesControllerTests.cs                  ❗ TODO
+│   ├── ComparisonsControllerTests.cs                ❗ TODO
+│   ├── UserExperienceControllerTests.cs             ❗ TODO
+│   └── CommentsControllerTests.cs                   ❗ TODO
+│
+├── ServiceTests
+│   ├── TerritoryServiceTests.cs                     ❗ TODO
+│   ├── ReviewServiceTests.cs                        ❗ TODO
+│   ├── RatingServiceTests.cs                        ❗ TODO
+│   ├── FavoriteServiceTests.cs                      ❗ TODO
+│   ├── ComparisonServiceTests.cs                    ❗ TODO
+│   ├── UserExperienceServiceTests.cs                ❗ TODO
+│   └── CommentServiceTests.cs                       ❗ TODO
+│
+└── ValidatorTests
+    ├── TerritoryDtoValidatorTests.cs                ❗ TODO
+    ├── ReviewValidatorTests.cs                      ❗ TODO
+    ├── RatingValidatorTests.cs                      ❗ TODO
+    ├── FavoriteValidatorTests.cs                    ❗ TODO
+    ├── ComparisonValidatorTests.cs                  ❗ TODO
+    ├── UserExperienceValidatorTests.cs              ❗ TODO
+    └── CommentValidatorTests.cs                     ❗ TODO

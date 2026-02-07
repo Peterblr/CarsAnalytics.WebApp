@@ -1,4 +1,10 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/update-tree.yml" />
+    <File Path="ProjectStructure.txt" />
+    <File Path="README.md" />
+    <File Path="TODO.txt" />
+  </Folder>
   <Project Path="WebApp.Domain/WebApp.Domain.csproj" />
   <Project Path="WebApp.Manager/WebApp.Manager.csproj">
     <BuildDependency Project="WebApp.Domain/WebApp.Domain.csproj" />
