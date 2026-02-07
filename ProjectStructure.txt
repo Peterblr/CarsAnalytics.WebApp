@@ -1,0 +1,127 @@
+﻿## WebApp.Manager
+WebApp.Manager
+├── App.razor
+├── Components
+│   └── Admin
+│       ├── StateCard.razor
+│       ├── StateCard.razor.cs
+│       ├── StateShape.razor
+│       ├── StateShape.razor.cs
+│       ├── TerritoryMap.razor
+│       └── TerritoryMap.razor.cs
+├── Layout
+│   ├── MainLayout.razor
+│   ├── MainLayout.razor.css
+│   └── TopNavMenu.razor
+├── Pages
+│   ├── Admin
+│   │   ├── Territories.razor
+│   │   └── Territories.razor.cs
+│   ├── Counter.razor
+│   ├── Home.razor
+│   ├── NotFound.razor
+│   └── Weather.razor
+├── Program.cs
+├── Properties
+│   └── launchSettings.json
+├── Store
+│   └── Territory
+│       ├── TerritoryActions.cs
+│       ├── TerritoryEffects.cs
+│       ├── TerritoryReducers.cs
+│       └── TerritoryState.cs
+├── WebApp.Manager.csproj
+├── _Imports.razor
+└── wwwroot
+    ├── appsettings.json
+    ├── assets
+    │   ├── cars
+    │   │   ├── Audi A3.jpg
+    │   │   └── Audi A6.jpg
+    │   ├── us-states.geojson
+    │   ├── us.svg
+    │   └── us1.svg
+    ├── css
+    │   └── app.css
+    ├── favicon.png
+    ├── icon-192.png
+    ├── index.html
+    ├── js
+    │   └── territoryMap.js
+    ├── lib
+    │   └── bootstrap
+    │       └── dist
+    │           ├── css
+    │           │   ├── bootstrap-grid.css
+    │           │   ├── bootstrap-grid.css.map
+    │           │   ├── bootstrap-grid.min.css
+    │           │   ├── bootstrap-grid.min.css.map
+    │           │   ├── bootstrap-grid.rtl.css
+    │           │   ├── bootstrap-grid.rtl.css.map
+    │           │   ├── bootstrap-grid.rtl.min.css
+    │           │   ├── bootstrap-grid.rtl.min.css.map
+    │           │   ├── bootstrap-reboot.css
+    │           │   ├── bootstrap-reboot.css.map
+    │           │   ├── bootstrap-reboot.min.css
+    │           │   ├── bootstrap-reboot.min.css.map
+    │           │   ├── bootstrap-reboot.rtl.css
+    │           │   ├── bootstrap-reboot.rtl.css.map
+    │           │   ├── bootstrap-reboot.rtl.min.css
+    │           │   ├── bootstrap-reboot.rtl.min.css.map
+    │           │   ├── bootstrap-utilities.css
+    │           │   ├── bootstrap-utilities.css.map
+    │           │   ├── bootstrap-utilities.min.css
+    │           │   ├── bootstrap-utilities.min.css.map
+    │           │   ├── bootstrap-utilities.rtl.css
+    │           │   ├── bootstrap-utilities.rtl.css.map
+    │           │   ├── bootstrap-utilities.rtl.min.css
+    │           │   ├── bootstrap-utilities.rtl.min.css.map
+    │           │   ├── bootstrap.css
+    │           │   ├── bootstrap.css.map
+    │           │   ├── bootstrap.min.css
+    │           │   ├── bootstrap.min.css.map
+    │           │   ├── bootstrap.rtl.css
+    │           │   ├── bootstrap.rtl.css.map
+    │           │   ├── bootstrap.rtl.min.css
+    │           │   └── bootstrap.rtl.min.css.map
+    │           └── js
+    │               ├── bootstrap.bundle.js
+    │               ├── bootstrap.bundle.js.map
+    │               ├── bootstrap.bundle.min.js
+    │               ├── bootstrap.bundle.min.js.map
+    │               ├── bootstrap.esm.js
+    │               ├── bootstrap.esm.js.map
+    │               ├── bootstrap.esm.min.js
+    │               ├── bootstrap.esm.min.js.map
+    │               ├── bootstrap.js
+    │               ├── bootstrap.js.map
+    │               ├── bootstrap.min.js
+    │               └── bootstrap.min.js.map
+    └── sample-data
+        └── weather.json
+
+20 directories, 80 files
+
+## WebApp.Services
+WebApp.Services
+├── Territory
+│   ├── ITerritoryService.cs
+│   └── TerritoryService.cs
+└── WebApp.Services.csproj
+
+2 directories, 3 files
+
+## WebApp.Domain
+WebApp.Domain
+├── Models
+│   ├── StateShapeDto.cs
+│   └── TerritoryDto.cs
+└── WebApp.Domain.csproj
+
+2 directories, 3 files
+
+## WebApp.Tests
+WebApp.Tests
+└── WebApp.Tests.csproj
+
+1 directory, 1 file
