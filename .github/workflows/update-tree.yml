@@ -21,7 +21,7 @@ jobs:
           echo "## WebApp.Manager" > ProjectStructure.txt
           tree WebApp.Manager \
             -a \
-            -I "bin|obj|*.user|*.cache" \
+            -I "bin|obj|*.user|*.cache|bootstrap|bootstrap*|*.map" \
             >> ProjectStructure.txt
 
       # Generate tree for WebApp.Services
@@ -31,7 +31,7 @@ jobs:
           echo "## WebApp.Services" >> ProjectStructure.txt
           tree WebApp.Services \
             -a \
-            -I "bin|obj|*.user|*.cache" \
+            -I "bin|obj|*.user|*.cache|bootstrap|bootstrap*|*.map" \
             >> ProjectStructure.txt
 
       # Generate tree for WebApp.Domain
@@ -41,7 +41,7 @@ jobs:
           echo "## WebApp.Domain" >> ProjectStructure.txt
           tree WebApp.Domain \
             -a \
-            -I "bin|obj|*.user|*.cache" \
+            -I "bin|obj|*.user|*.cache|bootstrap|bootstrap*|*.map" \
             >> ProjectStructure.txt
 
       # Generate tree for WebApp.Tests
@@ -51,7 +51,7 @@ jobs:
           echo "## WebApp.Tests" >> ProjectStructure.txt
           tree WebApp.Tests \
             -a \
-            -I "bin|obj|*.user|*.cache" \
+            -I "bin|obj|*.user|*.cache|bootstrap|bootstrap*|*.map" \
             >> ProjectStructure.txt
 
       # Commit changes to the SAME branch where workflow was triggered
