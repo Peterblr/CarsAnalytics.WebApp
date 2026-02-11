@@ -2,13 +2,15 @@
 WebApp.Manager
 ├── App.razor
 ├── Components
-│   └── Admin
-│       ├── StateCard.razor
-│       ├── StateCard.razor.cs
-│       ├── StateShape.razor
-│       ├── StateShape.razor.cs
-│       ├── TerritoryMap.razor
-│       └── TerritoryMap.razor.cs
+│   ├── Admin
+│   │   ├── StateCard.razor
+│   │   ├── StateCard.razor.cs
+│   │   ├── StateShape.razor
+│   │   ├── StateShape.razor.cs
+│   │   ├── TerritoryMap.razor
+│   │   └── TerritoryMap.razor.cs
+│   ├── Map.razor
+│   └── Map.razor.cs
 ├── Layout
 │   ├── MainLayout.razor
 │   ├── MainLayout.razor.css
@@ -19,6 +21,8 @@ WebApp.Manager
 │   │   └── Territories.razor.cs
 │   ├── Counter.razor
 │   ├── Home.razor
+│   ├── MostPopularCars.razor
+│   ├── MostPopularCars.razor.cs
 │   ├── NotFound.razor
 │   └── Weather.razor
 ├── Program.cs
@@ -52,7 +56,7 @@ WebApp.Manager
     └── sample-data
         └── weather.json
 
-16 directories, 36 files
+16 directories, 40 files
 
 ## WebApp.Services
 WebApp.Services
